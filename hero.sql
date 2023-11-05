@@ -156,3 +156,14 @@ VALUES
     
 ALTER TABLE item
 ADD item_price DECIMAL(10, 2);
+
+/*4	Create new branch named "feat/update-delete-inactive"
+
+	Update the state of hero 1 to inactive.
+	Delete the item associated with hero 1.*/
+UPDATE public.hero
+SET is_active = false
+WHERE hero_id = 1;
+
+DELETE FROM public.heroitem
+WHERE hero_id = 1;
